@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Solaris shuttle</title>
+<meta name="description" content="Live countdown to the Solaris @ Kallang 164 office shuttle from Potong Pasir and Aljunied MRT.">
+<meta name="theme-color" content="#EDF2FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D121A" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Shuttle">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
@@ -87,12 +96,12 @@ h1{ margin:2px 0 0; font-size:26px; line-height:1.15; font-weight:700; letter-sp
   border-radius:12px 44px 12px 44px;
 }
 .hero-route{ margin:0; font-size:14px; color:var(--hero-soft); font-weight:500; }
-.hero-main{ display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-top:14px; }
-.count{ font-family:var(--font-num); font-size:clamp(64px,22vw,96px); line-height:1; display:flex; align-items:baseline; font-variant-numeric:tabular-nums; }
-.count small{ font-family:var(--font-ui); font-size:16px; font-weight:600; margin-left:8px; color:var(--hero-soft); }
-.depart{ text-align:right; padding-bottom:6px; }
-.depart span{ display:block; font-size:13px; color:var(--hero-soft); }
-.depart time{ font-family:var(--font-num); font-size:26px; }
+.count{ font-family:var(--font-num); font-size:clamp(64px,20vw,88px); line-height:1; display:flex; align-items:baseline; gap:6px; margin-top:14px; font-variant-numeric:tabular-nums; }
+.count.long{ font-size:clamp(46px,14.5vw,64px); }
+.count small{ font-family:var(--font-ui); font-size:16px; font-weight:600; color:var(--hero-soft); margin-right:8px; }
+.hero-meta{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:16px; font-size:15px; color:var(--hero-soft); }
+.hero-meta time{ font-family:var(--font-num); font-size:20px; color:#fff; margin-left:8px; }
+.hero-meta .left{ font-variant-numeric:tabular-nums; }
 .hero-sub{ margin:14px 0 0; font-size:15px; color:var(--hero-soft); font-variant-numeric:tabular-nums; }
 .hero-warn{ margin:14px 0 0; padding:10px 12px; border-radius:10px; background:var(--hero-chip); font-size:14px; }
 .hero-off{ margin:16px 0 0; font-size:26px; font-weight:700; line-height:1.2; }
@@ -107,8 +116,8 @@ h1{ margin:2px 0 0; font-size:26px; line-height:1.15; font-weight:700; letter-sp
 .later .in{ font-size:15px; }
 .later .arr{ font-size:14px; color:var(--muted); }
 
-.trip-total{ display:flex; justify-content:space-between; align-items:baseline; margin-top:12px; }
-.trip-total strong{ font-family:var(--font-num); font-size:28px; font-weight:400; }
+.trip-total{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:4px 12px; margin-top:12px; }
+.trip-total strong{ font-family:var(--font-num); font-size:24px; font-weight:400; }
 .trip-total span{ font-size:15px; color:var(--muted); }
 .bar{ display:flex; gap:3px; height:14px; margin-top:12px; }
 .bar span{ border-radius:5px; min-width:6px; }
@@ -140,6 +149,8 @@ details.card .body b{ color:var(--text); }
 .step output{ min-width:26px; text-align:center; font-family:var(--font-num); font-size:15px; }
 .step span{ font-size:14px; color:var(--muted); }
 
+.tools ul{ list-style:none; margin:12px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.tools a{ display:flex; align-items:center; min-height:46px; padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:var(--surface-2); color:var(--text); text-decoration:none; font-size:14.5px; font-weight:600; line-height:1.25; }
 footer{ margin:22px 4px 0; font-size:13px; color:var(--muted); text-align:left; }
 footer p{ margin:0 0 6px; }
 [hidden]{ display:none !important; }
@@ -212,6 +223,19 @@ footer p{ margin:0 0 6px; }
         <div class="step"><button type="button" data-k="ride.aj" data-d="-1" aria-label="Decrease Aljunied ride time">&minus;</button><output id="v-ride-aj">8</output><span>min</span><button type="button" data-k="ride.aj" data-d="1" aria-label="Increase Aljunied ride time">+</button></div></div>
     </div>
   </details>
+
+  <section class="card tools">
+    <h2>More tools</h2>
+    <p class="sub">Other apps from Bricks2Clicks Consulting</p>
+    <ul>
+      <li><a href="https://waypoint-production-0307.up.railway.app/" target="_blank" rel="noopener">Waypoint</a></li>
+      <li><a href="https://expiry-tracker-201069.web.app/" target="_blank" rel="noopener">Warranty &amp; Expiry Tracker</a></li>
+      <li><a href="https://document-tools.up.railway.app/" target="_blank" rel="noopener">Document Tools</a></li>
+      <li><a href="https://bto-planning-tool.web.app/" target="_blank" rel="noopener">BTO Planning Tool</a></li>
+      <li><a href="https://protein-tracker-for-50s.web.app/" target="_blank" rel="noopener">Protein Tracker for 50s</a></li>
+      <li><a href="https://persistent-appt-reminder.web.app/" target="_blank" rel="noopener">Appointment Check-in</a></li>
+    </ul>
+  </section>
 
   <footer>
     <p>Times synced to Singapore time (SGT, UTC+8).</p>
@@ -317,7 +341,7 @@ footer p{ margin:0 0 6px; }
     var route = "Next shuttle, " + routeText();
     if (c.upcoming.length){
       var next = c.upcoming[0], rem = next - c.now.secs, mins = Math.ceil(rem / 60);
-      var left = rem < 3600 ? Math.floor(rem / 60) + ":" + pad(rem % 60) + " to go" : dur(Math.ceil(rem / 60)) + " to go";
+      var left = rem < 3600 ? Math.floor(rem / 60) + ":" + pad(rem % 60) + " to go" : "";
       var warn = "";
       if (state.walk > 0 && rem < state.walk * 60){
         var alt = c.upcoming.filter(function(t){ return t - c.now.secs >= state.walk * 60; })[0];
@@ -325,10 +349,12 @@ footer p{ margin:0 0 6px; }
           ? "It takes about " + state.walk + " min to reach the pickup point. Aim for the " + hhmm(alt) + " instead."
           : "It takes about " + state.walk + " min to reach the pickup point, so you would likely miss this last shuttle.";
       }
-      return '<p class="hero-route">' + route + '</p>' +
-        '<div class="hero-main"><div class="count"><span>' + mins + '</span><small>min</small></div>' +
-        '<div class="depart"><span>departs at</span><time>' + hhmm(next) + '</time></div></div>' +
-        '<p class="hero-sub">' + left + '</p>' + (warn ? '<p class="hero-warn">' + warn + '</p>' : "");
+      var big = mins < 60
+        ? '<div class="count"><span>' + mins + '</span><small>min</small></div>'
+        : '<div class="count long"><span>' + Math.floor(mins / 60) + '</span><small>h</small><span>' + pad(mins % 60) + '</span><small>min</small></div>';
+      return '<p class="hero-route">' + route + '</p>' + big +
+        '<div class="hero-meta"><span>Departs at<time>' + hhmm(next) + '</time></span><span class="left">' + left + '</span></div>' +
+        (warn ? '<p class="hero-warn">' + warn + '</p>' : "");
     }
     var nx = nextServiceDay(c.now), first = CONFIG.schedule[state.dir][state.station][0];
     var when = !nx ? "" : (nx.o === 1 ? "tomorrow" : DAYS[nx.dow]);
@@ -362,12 +388,12 @@ footer p{ margin:0 0 6px; }
     if (wait > 0) bar += '<span class="b-wait" style="flex:' + wait + '"></span>';
     bar += '<span class="b-ride" style="flex:' + ride + '"></span>';
     return title +
-      '<div class="trip-total"><strong>' + total + ' min</strong><span>on the ' + hhmm(catchable) + ' shuttle</span></div>' +
+      '<div class="trip-total"><strong>' + dur(total) + '</strong><span>on the ' + hhmm(catchable) + ' shuttle</span></div>' +
       '<div class="bar" aria-hidden="true">' + bar + '</div>' +
       '<div class="legend">' +
-        '<span><i class="b-walk"></i><b>' + state.walk + '</b> walk</span>' +
-        '<span><i class="b-wait"></i><b>' + wait + '</b> wait</span>' +
-        '<span><i class="b-ride"></i><b>' + ride + '</b> ride</span></div>' +
+        '<span><i class="b-walk"></i><b>' + dur(state.walk) + '</b> walk</span>' +
+        '<span><i class="b-wait"></i><b>' + dur(wait) + '</b> wait</span>' +
+        '<span><i class="b-ride"></i><b>' + dur(ride) + '</b> ride</span></div>' +
       '<p class="arrive">Arrive around <b>' + hhmm(catchable + ride * 60) + '</b></p>';
   }
 
@@ -441,6 +467,9 @@ footer p{ margin:0 0 6px; }
   syncControls(); syncSettings(); paintThemeBtn(); render();
   setInterval(render, 1000);
   document.addEventListener("visibilitychange", function(){ if (!document.hidden) render(); });
+  if ("serviceWorker" in navigator && location.protocol === "https:") {
+    window.addEventListener("load", function(){ navigator.serviceWorker.register("/sw.js").catch(function(){}); });
+  }
 })();
 </script>
 </body>
